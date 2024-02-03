@@ -1,5 +1,4 @@
 import React from 'react'
-import del from '/images/del.jpeg'
 import { MdZoomIn } from "react-icons/md";
 
 function Certificate({
