@@ -6,8 +6,8 @@ function Projects() {
 
   return (
     <div className='font-poppins'>
-      <h1 className='font-bold pt-20 pb-5 text-3xl text-center'>My Projects</h1>
-      <div className='py-10'>
+      <h1 className='font-bold pt-10 md:pt-20 md:pb-5 text-3xl text-center'>My Projects</h1>
+      <div className='md:py-10'>
       {
         data.map((project) => (
           <ProjectCard 

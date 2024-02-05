@@ -15,7 +15,7 @@ function Certificate({
     }
 
   return (
-    <div class={` relative max-w-sm rounded-lg overflow-hidden cursor-pointer hover:opacity-65`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
+    <div class={`relative max-w-sm rounded-lg overflow-hidden cursor-pointer hover:opacity-65 md:my-0 my-5`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
         <img class="w-full h-full object-cover shadow-xl" src={image} alt={title} />
         {
             isHover &&

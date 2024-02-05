@@ -3,6 +3,7 @@ import ExpCard from '../components/ExpCard/ExpCard'
 import list from '../data/achievementList'
 import Certificate from '../components/CertificateCard/Certificate'
 import * as constant from '../constant/constant'
+import ExpSubtitle from '../components/ExpSubtitle/ExpSubtitle'
 
 
 function Experience() {
@@ -37,8 +38,8 @@ function Experience() {
   }
 
   return (
-    <div className='flex flex-col w-3/4 m-auto font-poppins'>
-      <h1 className='font-semibold text-xl px-5 py-2 mx-5 mt-5 bg-slate-200 w-fit rounded-full shadow-md hover:shadow-sm '>Work Experience</h1>
+    <div className='flex flex-col md:w-3/4 m-auto font-poppins'>
+      <ExpSubtitle  title = "Work Experience"/>
       <ExpCard
         job={'Software Engineer Intern'}
         company={'PT. Astra Honda Motor'}
@@ -96,9 +97,9 @@ function Experience() {
               I'm also learn to develop android application using Jetpack Compose, learn about design system in android development like 
               using MVVM Pattern, Singleton Class using Dependency Injection, and also learn some soft skills and delve my english proficiency in conversation.
             </p>
-            <div className='flex flex-row justify-around'>
+            <div className='flex flex-col md:flex-row justify-around'>
               <ul className='list-disc space-y-1'>
-                <p className='font-bold pb-2 text-green-500'>Learning Path (Hard Skill):</p>
+                <p className='font-bold mt-5 md:pb-2 text-green-500'>Learning Path (Hard Skill):</p>
                 <li>Kotlin Introduction</li>
                 <li>Android Development for Beginner</li>
                 <li>Fundamental of Android Development</li>
@@ -108,7 +109,7 @@ function Experience() {
                 <li>SOLID Principle</li>
               </ul>
               <ul className='list-disc space-y-1 '>
-                <p className='font-bold pb-2 text-green-500'>Learning Path (Soft Skill):</p>  
+                <p className='font-bold mt-5 md:pb-2 text-green-500'>Learning Path (Soft Skill):</p>  
                 <li>Growth Mindset and The Power of Feedback</li>
                 <li>Time Management</li>
                 <li>Critical Thinking and Problem Solving</li>
@@ -121,39 +122,17 @@ function Experience() {
           </div>
         }
       />
-      <h1 className='font-semibold text-xl px-5 py-2 mx-5 mt-5 bg-slate-200 w-fit rounded-full shadow-md hover:shadow-sm '>Organization Experience</h1>
+
+      <ExpSubtitle  title = "Organization Experience"/>
         <ExpCard
           job={'Leader of Google DSC IT Del'}
           company={'Google Developer Student Club of IT Del'}
           date={'August 2023 - Present'}
           description={
             <div className='space-y-3'>
-              <p>Become mobile development cohort. In this Bangkit Academy, I learn about Kotlin and Android Development from beginner up to intermediate level.
-                I'm also learn to develop android application using Jetpack Compose, learn about design system in android development like 
-                using MVVM Pattern, Singleton Class using Dependency Injection, and also learn some soft skills and delve my english proficiency in conversation.
+              <p>Choosen as lead of Google Developer Student Club for my campus. As a leader, I have responsibility as the representative of my campus as Google Developer. I am also take responsibility as coordinator of Google Developer Student event in my campus.
+                Provide lots of event for students who eager to learn about Google technologies and also who love to work on projects. By Google Developer Student Club, I gain a lot of experience in leadership and also in tech industry. In GDSC we learn, we connect, and we growth.
               </p>
-              <div className='flex flex-row justify-around'>
-                <ul className='list-disc space-y-1'>
-                  <p className='font-bold pb-2 text-green-500'>Learning Path (Hard Skill):</p>
-                  <li>Kotlin Introduction</li>
-                  <li>Android Development for Beginner</li>
-                  <li>Fundamental of Android Development</li>
-                  <li>Intermediate Android Development</li>
-                  <li>UI/UX for Beginner</li>
-                  <li>Android Development using Jetpack Compose</li>
-                  <li>SOLID Principle</li>
-                </ul>
-                <ul className='list-disc space-y-1 '>
-                  <p className='font-bold pb-2 text-green-500'>Learning Path (Soft Skill):</p>  
-                  <li>Growth Mindset and The Power of Feedback</li>
-                  <li>Time Management</li>
-                  <li>Critical Thinking and Problem Solving</li>
-                  <li>Adaptability and Resilience</li>
-                  <li>Project Management</li>
-                  <li>Professional Communication and Networking</li>
-                  <li>Personal Branding and Interview Communication</li>
-                </ul> 
-              </div>
             </div>
           }
         />
@@ -170,12 +149,13 @@ function Experience() {
             </div>
           }
         />
-      <h1 className='font-semibold text-xl px-5 py-2 mx-5 mt-5 bg-slate-200 w-fit rounded-full shadow-md hover:shadow-sm '>Achievement</h1>
+        
+      <ExpSubtitle title="Achievement"/>
       <div className='my-3'>
-        <p className='font-bold text-center underline text-xl'>International Collegiate Programming Contest</p> 
+        <p className='font-bold text-center underline p-5 md:p-0 text-sm md:text-xl'>International Collegiate Programming Contest</p> 
         {
           icpc.map((icpcRow, rowIndex) => (
-            <div key={rowIndex} className='flex space-x-7 py-3 justify-center animate-fade-up'>
+            <div key={rowIndex} className='flex flex-col md:flex-row space-x-0 md:space-x-7 w-5/6 m-auto md:w-full py-3 justify-center animate-fade-up'>
               {
                 icpcRow.map((acv, index) => (
                   <Certificate key={index} title={acv.title} image={acv.image} /> 
@@ -186,11 +166,11 @@ function Experience() {
         }
       </div>
       <div className='my-3'>
-        <p className=' font-bold px-3 pt-5 underline'>Business Case Competition</p>
+        <p className='text-sm md:text-base font-bold px-3 pt-5 underline'>Business Case Competition</p>
         <div className='w-full m-auto'>
           {
               businessAcv.map((row, rowIndex) => (
-                <div key={rowIndex} className='flex space-x-7 py-3 justify-center animate-fade-up'>
+                <div key={rowIndex} className='flex flex-col md:flex-row space-x-0 md:space-x-7 w-3/4 md:w-full m-auto py-3 justify-center animate-fade-up'>
                   {
                     row.map((acv, index) => (
                       <Certificate key={index} title={acv.title} image={acv.image} /> 
@@ -202,11 +182,11 @@ function Experience() {
         </div>
       </div>
       <div className='my-3'>
-        <p className=' font-bold px-3 pt-5 underline'>Technology</p>
-        <div className='w-full m-auto'>
+        <p className='text-sm md:text-base font-bold px-3 pt-5 underline'>Technology</p>
+        <div className='md:w-full m-auto'>
           {
               itAcv.map((row, rowIndex) => (
-                <div key={rowIndex} className='flex space-x-7 py-3 justify-center animate-fade-up'>
+                <div key={rowIndex} className='flex flex-col md:flex-row w-5/6 md:w-full space-x-0 md:space-x-7 py-3 m-auto animate-fade-up'>
                   {
                     row.map((acv, index) => (
                       <Certificate key={index} title={acv.title} image={acv.image} /> 
