@@ -13,7 +13,7 @@ const Navbar = () => {
      }
 
     return (
-        <header className={`w-${ isHome ? 'screen':'full'} header font-poppins bg-black flex justify-around items-center align-middle p-5 text-white z-50  space-x-5`} >
+        <header className={`${isHome ?'w-screen':'w-full'} header font-poppins bg-black flex justify-around items-center align-middle p-5 text-white z-50  space-x-5`} >
             <NavLink to = "/" className= "text-xl flex font-bold min-w-max ">
                 <p>Samuel I. H. Sibuea</p>
             </NavLink>
