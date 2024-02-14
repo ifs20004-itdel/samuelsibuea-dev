@@ -85,7 +85,7 @@ const Home = () => {
 
         moon1.rotation.y = time*0.5
         moon.rotation.y = time*0.3;
-        galaxy.setRotationFromAxisAngle(new THREE.Vector3(1,1,0), time*0.1);
+        galaxy.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), time*0.1);
         galaxy2.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), time*0.2);
         galaxy3.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), time*0.1);
 
@@ -104,8 +104,15 @@ const Home = () => {
     name.className = 'pb-5 font-bold text-xl md:text-3xl bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient drop-shadow-x'
 
     const greet = document.createElement('p');
-    greet.innerHTML = 'Hi, Fellow Stalker! ✋';
-    greet.className = 'pb-1 font-bold text-xl md:text-2xl '
+    greet.innerHTML = 'Hi, Fellow Stalker!';
+    greet.className = 'pb-1 font-bold text-xl md:text-2xl flex flex-row items-center gap-2 '
+    const gifSpan = document.createElement('span');
+    const hiGif = document.createElement('img');
+    hiGif.src = '/images/hi.gif';
+    hiGif.width = 28;
+
+    gifSpan.appendChild(hiGif);
+    greet.appendChild(gifSpan);
 
     const occupation = document.createElement('p');
     occupation.innerHTML = 'I\'m a Software Engineer';
