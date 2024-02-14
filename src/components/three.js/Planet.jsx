@@ -1,12 +1,11 @@
 import * as THREE from 'three';
 import { BufferGeometryUtils } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
-const DOT_SIZE = 0.4;
 const DOT_COLOR = 0xc6cdd5;
 
 class Planet{
-
-    constructor(radius){
+    constructor(radius, dot_size){
+        this.dot_size = dot_size;
         this.radius = radius;
     }
 
@@ -14,7 +13,7 @@ class Planet{
         const dotGeometries = [];
 
         for(let i = 0; i < nDot; i++){
-            const dotGeometry = new THREE.CircleGeometry(DOT_SIZE, 5);
+            const dotGeometry = new THREE.CircleGeometry(this.dot_size, 5);
             const phi = Math.random()*Math.PI;
             const theta = Math.random()*2*Math.PI;
 

@@ -3,10 +3,11 @@ import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import starsTexture from '/images/stars.jpg';
 import Planet from '../components/three.js/Planet.jsx';
+import Galaxy from '../components/three.js/Galaxy.jsx';
 
 const CAMERA_FOV = 45;
-const CAMERA_NEAR = 100;
-const CAMERA_FAR = 1000;
+const CAMERA_NEAR = 200;
+const CAMERA_FAR = 2000;
 const CAMERA_X = -90;
 const CAMERA_Y = 0 ;
 const CAMERA_Z = innerHeight/2;
@@ -44,12 +45,12 @@ const Home = () => {
     ]);
 
     // Construct planet 1
-    const planet1 = new Planet(75).createSphere(1600);
+    const planet1 = new Planet(75,0.4).createSphere(1600);
     planet1.position.set(200,20,0);
     scene.add(planet1);
 
     // Construct moon 1
-    const moon1 = new Planet(5).createSphere(200);
+    const moon1 = new Planet(5,0.4).createSphere(200);
     moon1.position.set(100,0,10);
     const moon = new THREE.Object3D();
     moon.add(moon1);
@@ -57,9 +58,25 @@ const Home = () => {
     scene.add(moon);
 
     // Construct planet 2
-    const planet2 = new Planet(100).createSphere(1300); 
+    const planet2 = new Planet(100,0.75).createSphere(1300); 
     planet2.position.set(-150,190,-550);
     scene.add(planet2);
+
+    // construct galaxy
+    const galaxy = new Galaxy(5000, 2, 40, 1).createGalaxy(0x00ff00, 0x0000ff);
+    galaxy.position.set(-250,-80,-650);
+    galaxy.lookAt(planet2.position);
+    scene.add(galaxy);
+
+    const galaxy2 = new Galaxy(1000, 4, 40, 1).createGalaxy( 0xffff00, 0xff0000);
+    galaxy2.position.set(160,300,-550);
+    galaxy2.lookAt(planet2.position);
+    scene.add(galaxy2);
+
+    const galaxy3 = new Galaxy(2000, 8, 80, 1).createGalaxy(0x00ff00, 0x0000ff);
+    galaxy3.position.set(650,310,-450);
+    galaxy3.lookAt(planet2.position);
+    scene.add(galaxy3);
 
     const animate = (time)=>{
         time *= 0.005;
@@ -68,13 +85,15 @@ const Home = () => {
 
         moon1.rotation.y = time*0.5
         moon.rotation.y = time*0.3;
+        galaxy.setRotationFromAxisAngle(new THREE.Vector3(1,1,0), time*0.1);
+        galaxy2.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), time*0.2);
+        galaxy3.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), time*0.1);
 
         controls.update();
         renderer.render(scene, camera);
         
         requestAnimationFrame(animate);
     }
-
 
     // Greetings
     const greetings = document.createElement('div');
