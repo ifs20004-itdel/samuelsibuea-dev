@@ -2,6 +2,7 @@ import React from 'react'
 import samuel_google from '/images/samuel_google.webp'
 import SkillsCard from '../components/SkillsCard/SkillsCard'
 import skillList from '../data/skillList'
+import Navbar from '../components/Navbar'
 
 function About() {
 
@@ -16,6 +17,7 @@ function About() {
 
   return (
     <div className='flex flex-col w-full font-poppins'>
+      <Navbar/>
       <div className=' hidden md:flex align-middle justify-center py-12  bg-slate-200 shadow-md rounded-b-full'>
         <img className='w-3/6 md:w-2/5 rounded-xl animate-jump-in animate-once' src={samuel_google} alt="samuel"/>
       </div>

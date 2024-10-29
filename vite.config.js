@@ -7,4 +7,7 @@ export default defineConfig({
             react()
           ],
   publicDir: 'public',
+  optimizeDeps:{
+    exclude:['js-big-decimal']
+  }
 })

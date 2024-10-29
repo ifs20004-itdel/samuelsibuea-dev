@@ -1,11 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-    const location = useLocation();
-    const isHome = location.pathname === "/";
-
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const toggleMenu =() =>{
@@ -13,7 +9,7 @@ const Navbar = () => {
      }
 
     return (
-        <header className={`${isHome ?'w-screen':'w-full'} header font-poppins bg-black flex justify-around items-center align-middle p-5 text-white z-50  space-x-5`} >
+        <header className={`header font-poppins bg-black flex justify-around items-center align-middle p-5 text-white z-50  space-x-5`} >
             <NavLink to = "/" className= "text-xl flex font-bold min-w-max ">
                 <p>Samuel I. H. Sibuea</p>
             </NavLink>
