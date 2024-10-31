@@ -3,18 +3,32 @@
 @tailwind utilities;
 
 
-/* .cloud3{
-    animation: animate 2s linear infinite;
-} */
+@font-face {
+  font-family: 'WickedMouse';
+  src: url('./fonts/WickedMouse.ttf');
+}
 
-/* @keyframes animate {
-    0%{
-        object-position: 150px 20px;
-    }
-    50%{
-        object-position: 120px 30px;
-    }
-    100%{
-        object-position: 200px 20px;
-    }
-} */
+.speed{
+    animation: bounce infinite ease-in-out;
+}
+
+.speed-slow{
+  animation-duration: 15s;
+}
+
+.speed-medium{
+  animation-duration: 10s;
+}
+
+.speed-fast{
+  animation-duration: 5s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    margin-left: -2%;
+  }
+  50% {
+    margin-left: 0%;
+  }
+}
