@@ -6,28 +6,38 @@ import cloud3 from "/homepage/cloud3.png";
 import cloud4 from "/homepage/cloud4.png";
 import mountain from "/homepage/mountain.png";
 import fog from "/homepage/fog.png";
+import Subtitle from "../components/Subtitle/Subtitle";
+import { Fab } from "react-tiny-fab";
 
 const Home = () => {
   return (
     <div>
       <Parallax
-        pages={3}
+        pages={4}
         className="bg-gradient-to-b from-sky-800 to-sky-100 text-white"
       >
         <ParallaxLayer offset={0} speed={-0.25} className="z-0">
           <img src={cloud} className="opacity-30" />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.6} speed={-0.1} className="z-10 min-w-full">
+        <ParallaxLayer offset={0.5} speed={-0.1} className="z-10 min-w-full">
+          {/* <ParallaxLayer offset={1} speed={-0.95} className="z-10 min-w-full"> */}
           <img
             src={mountain}
-            className="absolute bottom-0 min-w-full scale-110 "
+            className="absolute bottom-0 min-w-full scale-100 "
           />
         </ParallaxLayer>
+        <ParallaxLayer className="z-10 min-w-full">
+          <Fab
+            
+            alwaysShowTitle={true}
+          >
 
-        <ParallaxLayer offset={0.4} speed={-0.6} className="z-10 align-middle">
+          </Fab>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.3} speed={-0.6} className="z-10 align-middle">
           <h1 className="text-5xl font-bold text-center font-wicked">
-            Welcome, fellow developer{" "}
+            Welcome, fellow developer
           </h1>
         </ParallaxLayer>
 
@@ -69,7 +79,7 @@ const Home = () => {
           horizontal
           className="z-30 min-w-full speed speed-slow"
         >
-          <img src={cloud4} width={150} className="absolute top-52 left-3/4 " />
+          <img src={cloud4} width={150} className="absolute top-64 right-36 " />
         </ParallaxLayer>
 
         {/* 
@@ -113,14 +123,62 @@ const Home = () => {
         <ParallaxLayer
           offset={2}
           factor={1}
-          className="bg-gradient-to-t from-sky-800"
+          speed={0.3}
+          className="bg-gradient-to-t from-sky-800 z-40"
         >
-          <div className="text-center font-bold text-3xl">
-            <h1 className="text-7xl px-52 py-14 font-poppins">
+          <div className="text-center text-3xl font-wicked">
+            <h1 className="text-6xl px-52 pt-14 pb-5">
               Samuel Immanuel Herlinton Sibuea
             </h1>
-            <p>Software Engineer</p>
-            <p className="font-wicked p-10">Content are under maintenance !</p>
+            <p className="tracking-wider">Software Engineer</p>
+          </div>
+          <div className="flex flex-row w-3/4 py-16 m-auto gap-x-14 text-justify font-poppins">
+            <div className="w-1/2">
+              <p>
+                I'm a Software Engineer with a strong passion for competition, a
+                keen sense of problem-solving, and a commitment to continuous
+                learning. I specialize in Backend and Cloud Engineering and have
+                a growing interest in Android Development, along with some
+                foundational knowledge in Technopreneurship.
+              </p>
+              <a
+                type="button"
+                href="./about"
+                className="text-white bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:bg-gradient-to-br py-2 px-3 my-3 shadow-lg rounded-lg"
+              >
+                About me
+              </a>
+            </div>
+            <div className="w-1/2">
+              <div className="pb-5">
+                <Subtitle title="Skills" />
+                <div className="font-bold text-sm flex px-2 pt-3">
+                  <div className="tag">JAVA</div>
+                  <div className="tag">GOLANG</div>
+                  <div className="tag">KOTLIN</div>
+                  <div className="tag">REACT JS</div>
+                  <div className="tag">SPRING BOOT</div>
+                  <div className="tag">My SQL</div>
+                </div>
+                <div className="font-bold text-sm flex px-2 py-3">
+                  <div className="tag">REDIS</div>
+                  <div className="tag">MONGODB</div>
+                  <div className="tag">KOTLIN</div>
+                  <div className="tag">ANDROID</div>
+                </div>
+              </div>
+              <div>
+                <Subtitle title="Tools" />
+                <div className="font-bold text-sm flex px-2 py-3">
+                  <div className="tag">VS CODE</div>
+                  <div className="tag">GIT</div>
+                  <div className="tag">IntelliJ IDEA</div>
+                  <div className="tag">POSTMAN</div>
+                  <div className="tag">DOCKER</div>
+                  <div className="tag">JIRA</div>
+                </div>
+              </div>
+            </div>
           </div>
         </ParallaxLayer>
       </Parallax>

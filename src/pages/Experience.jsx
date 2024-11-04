@@ -3,7 +3,7 @@ import ExpCard from "../components/ExpCard/ExpCard";
 import list from "../data/achievementList";
 import Certificate from "../components/CertificateCard/Certificate";
 import * as constant from "../constant/constant";
-import ExpSubtitle from "../components/ExpSubtitle/ExpSubtitle";
+import Subtitle from "../components/Subtitle/Subtitle";
 import Navbar from "../components/Navbar";
 
 function Experience() {
@@ -37,10 +37,10 @@ function Experience() {
   }
 
   return (
-    <div className="flex flex-col font-poppins">
+    <div className="flex flex-col bg-gray-200">
       <Navbar/>
       <div className="md:w-3/4 m-auto">
-        <ExpSubtitle title="Work Experience" />
+        <Subtitle title="Work Experience" />
         <ExpCard
           job={"Software Engineer Intern"}
           company={"PT. Astra Honda Motor"}
@@ -154,7 +154,7 @@ function Experience() {
           }
         />
 
-        <ExpSubtitle title="Organization Experience" />
+        <Subtitle title="Organization Experience" />
         <ExpCard
           job={"Leader of Google DSC IT Del"}
           company={"Google Developer Student Club of IT Del"}
@@ -192,7 +192,7 @@ function Experience() {
           }
         />
 
-        <ExpSubtitle title="Achievement" />
+        <Subtitle title="Achievement" />
         <div className="my-3">
           <p className="font-bold text-center underline p-5 md:p-0 text-sm md:text-xl">
             International Collegiate Programming Contest

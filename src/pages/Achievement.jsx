@@ -1,11 +1,10 @@
 import React from "react";
-import PostCard from "../components/PostCard/PostCard";
 import Certificate from "../components/CertificateCard/Certificate";
 import certificateList from "../data/certificateList";
 import certificateEventList from "../data/certificateEventList";
 import Navbar from "../components/Navbar";
 
-function Education() {
+function Achievement() {
   const certificatePerRow = 3;
   const courses = [];
   const eventIT = [];
@@ -23,10 +22,6 @@ function Education() {
     <div className="flex flex-col font-poppins w-full">
       <Navbar />
       <div className=" space-y-12 w-3/4 m-auto py-12">
-        <div>
-          <h3 className="font-bold text-lg underline pb-5">Education</h3>
-          <PostCard />
-        </div>
         <div className="flex flex-col">
           <h3 className="font-bold text-lg underline pb-6">
             Course Certificates
@@ -70,4 +65,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Achievement;

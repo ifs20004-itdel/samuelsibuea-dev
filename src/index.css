@@ -8,6 +8,13 @@
   src: url('./fonts/WickedMouse.ttf');
 }
 
+/* CUSTOM CSS */
+.tag{
+  border-left: 2px solid white;
+  padding: 0.25rem 0.5rem;
+}
+
+/* ANIMATION */
 .speed{
     animation: bounce infinite ease-in-out;
 }
