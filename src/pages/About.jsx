@@ -39,7 +39,7 @@ function About() {
             <PostCard />
           </div>
           <div className="flex flex-col w-3/4 m-auto text-justify ">
-            <h3 className="font-bold text-start md:text-xl text-base ">
+            <h3 className="font-bold text-start md:text-xl text-base">
               About Me
             </h3>
             <div className="md:text-base text-sm space-y-5">

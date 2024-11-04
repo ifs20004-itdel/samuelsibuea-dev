@@ -1,46 +1,16 @@
 import React from "react";
 import ExpCard from "../components/ExpCard/ExpCard";
-import list from "../data/achievementList";
-import Certificate from "../components/CertificateCard/Certificate";
-import * as constant from "../constant/constant";
 import Subtitle from "../components/Subtitle/Subtitle";
 import Navbar from "../components/Navbar";
 
 function Experience() {
-  const businessAcvTemp = [];
-  const itAcvTemp = [];
-  const businessAcv = [];
-  const itAcv = [];
-  const icpcTemp = [];
-  const icpc = [];
-
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].type === constant.BUSINESS) {
-      businessAcvTemp.push(list[i]);
-    } else if (list[i].type === constant.IT) {
-      itAcvTemp.push(list[i]);
-    } else {
-      icpcTemp.push(list[i]);
-    }
-  }
-
-  for (let i = 0; i < businessAcvTemp.length; i += constant.CERTIFICATEROW) {
-    const rowBusiness = businessAcvTemp.slice(i, i + constant.CERTIFICATEROW);
-    const rowIt = itAcvTemp.slice(i, i + constant.CERTIFICATEROW);
-    businessAcv.push(rowBusiness);
-    itAcv.push(rowIt);
-  }
-
-  for (let i = 0; i < icpcTemp.length; i += constant.CERTIFICATEICPC) {
-    const rowIcpc = icpcTemp.slice(i, i + constant.CERTIFICATEICPC);
-    icpc.push(rowIcpc);
-  }
-
   return (
     <div className="flex flex-col bg-gray-200">
       <Navbar/>
       <div className="md:w-3/4 m-auto">
-        <Subtitle title="Work Experience" />
+        <div className="py-5">
+          <Subtitle title="Work Experience" />
+        </div>
         <ExpCard
           job={"Software Engineer Intern"}
           company={"PT. Astra Honda Motor"}
@@ -153,8 +123,9 @@ function Experience() {
             </div>
           }
         />
-
-        <Subtitle title="Organization Experience" />
+        <div className="py-5">
+          <Subtitle title="Organization Experience" />
+        </div>
         <ExpCard
           job={"Leader of Google DSC IT Del"}
           company={"Google Developer Student Club of IT Del"}
@@ -191,65 +162,6 @@ function Experience() {
             </div>
           }
         />
-
-        <Subtitle title="Achievement" />
-        <div className="my-3">
-          <p className="font-bold text-center underline p-5 md:p-0 text-sm md:text-xl">
-            International Collegiate Programming Contest
-          </p>
-          {icpc.map((icpcRow, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex flex-col md:flex-row space-x-0 md:space-x-7 w-5/6 m-auto md:w-full py-3 justify-center animate-fade-up"
-            >
-              {icpcRow.map((acv, index) => (
-                <Certificate key={index} title={acv.title} image={acv.image} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="my-3">
-          <p className="text-sm md:text-base font-bold px-3 pt-5 underline">
-            Business Case Competition
-          </p>
-          <div className="w-full m-auto">
-            {businessAcv.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex flex-col md:flex-row space-x-0 md:space-x-7 w-3/4 md:w-full m-auto py-3 justify-center animate-fade-up"
-              >
-                {row.map((acv, index) => (
-                  <Certificate
-                    key={index}
-                    title={acv.title}
-                    image={acv.image}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="my-3">
-          <p className="text-sm md:text-base font-bold px-3 pt-5 underline">
-            Technology
-          </p>
-          <div className="md:w-full m-auto">
-            {itAcv.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex flex-col md:flex-row w-5/6 md:w-full space-x-0 md:space-x-7 py-3 m-auto animate-fade-up"
-              >
-                {row.map((acv, index) => (
-                  <Certificate
-                    key={index}
-                    title={acv.title}
-                    image={acv.image}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

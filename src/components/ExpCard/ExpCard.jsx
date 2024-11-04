@@ -25,7 +25,7 @@ function ExpCard({
   }
 
   return (
-    <div className='flex flex-col font-poppins text-white bg-slate-700 rounded-lg py-5 md:py-10 px-10 m-5 shadow-slate-500 shadow-xl animate-fade-up animate-duration-700 '>
+    <div className='flex flex-col font-poppins text-white bg-slate-700 rounded-lg py-5 md:py-10 px-10 my-5 shadow-slate-500 shadow-xl animate-fade-up animate-duration-700 '>
         <h1 className='text-bold md:text-3xl text-xl text-amber-500 '>{job}</h1>
         <div className='md:w-2/6 w-5/6 h-1 bg-amber-300 rounded-full mb-3'/>
         <p className='text-bold'>{company}</p>
