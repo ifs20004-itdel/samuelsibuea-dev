@@ -1,11 +1,11 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import cloud from "/homepage/clouds.png";
-import cloud1 from "/homepage/cloud1.png";
-import cloud2 from "/homepage/cloud2.png";
-import cloud3 from "/homepage/cloud3.png";
-import cloud4 from "/homepage/cloud4.png";
-import mountain from "/homepage/mountain.png";
-import fog from "/homepage/fog.png";
+import cloud from "/images/homepage/clouds.png";
+import cloud1 from "/images/homepage/cloud1.png";
+import cloud2 from "/images/homepage/cloud2.png";
+import cloud3 from "/images/homepage/cloud3.png";
+import cloud4 from "/images/homepage/cloud4.png";
+import mountain from "/images/homepage/mountain.png";
+import fog from "/images/homepage/fog.png";
 import Subtitle from "../components/Subtitle/Subtitle";
 import { Fab } from "react-tiny-fab";
 

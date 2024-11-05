@@ -1,7 +1,7 @@
-import brand_identity from '/certificates/Brand_Identity_Blibli.webp';
-import software_delivery from '/certificates/Peningkatan-Performa-Software-Delivery-dengan-CI-CD.webp';
-import dts from '/certificates/Digital-Enterpreneurship-Academy-DTS.webp';
-import ui_inno_war from '/certificates/UIIW-743.png';
+import brand_identity from '/images/certificates/Brand_Identity_Blibli.webp';
+import software_delivery from '/images/certificates/Peningkatan-Performa-Software-Delivery-dengan-CI-CD.webp';
+import dts from '/images/certificates/Digital-Enterpreneurship-Academy-DTS.webp';
+import ui_inno_war from '/images/certificates/UIIW-743.png';
 
 const certificateEventList = [
     {

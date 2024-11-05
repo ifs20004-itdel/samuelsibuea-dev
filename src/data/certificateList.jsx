@@ -1,13 +1,13 @@
-import git_course from '/certificates/Dasar-Git-dan-Github.webp';
-import devops_course from '/certificates/Dasar-DevOps.webp';
-import android_beginner from '/certificates/Android-Pemula.webp';
-import kotlin_beginner from '/certificates/Memulai-Pemrograman-Dengan-Kotlin.webp';
-import ux_course from '/certificates/Dasar-UX-Design.webp';
-import android_fundamental from '/certificates/Fundamental-Aplikasi-Android.webp';
-import jetpack_compose_beginner from '/certificates/Jetpack-Compose-Dasar.webp';
-import android_intermediate from '/certificates/Android-Intermediate.webp';
-import nodejs_progate from '/certificates/Path-Pengembangan-Web(Node.js).webp';
-import spring_boot_udemy from '/certificates/Spring-and-Spring-Boot-Projects.jpg';
+import git_course from '/images/certificates/Dasar-Git-dan-Github.webp';
+import devops_course from '/images/certificates/Dasar-DevOps.webp';
+import android_beginner from '/images/certificates/Android-Pemula.webp';
+import kotlin_beginner from '/images/certificates/Memulai-Pemrograman-Dengan-Kotlin.webp';
+import ux_course from '/images/certificates/Dasar-UX-Design.webp';
+import android_fundamental from '/images/certificates/Fundamental-Aplikasi-Android.webp';
+import jetpack_compose_beginner from '/images/certificates/Jetpack-Compose-Dasar.webp';
+import android_intermediate from '/images/certificates/Android-Intermediate.webp';
+import nodejs_progate from '/images/certificates/Path-Pengembangan-Web(Node.js).webp';
+import spring_boot_udemy from '/images/certificates/Spring-and-Spring-Boot-Projects.jpg';
 
 const certificateList = [
     {

@@ -1,7 +1,8 @@
-import PurrfectAid from '/projects/PurrfectAid.jpeg'
-import gdsc_link from '/projects/gdsc_link.png'
-import genshin from '/projects/GenshinApp.png'
-import buncis from '/projects/buncis.png'
+import PurrfectAid from '/images/projects/PurrfectAid.jpeg'
+import gdsc_link from '/images/projects/gdsc_link.png'
+import genshin from '/images/projects/GenshinApp.png'
+import buncis from '/images/projects/buncis.png'
+import captioncraft from '/images/projects/captioncraft.jpeg'
 
 const projectList = [
     {
@@ -15,6 +16,12 @@ const projectList = [
         image: gdsc_link,
         description: "GDSC.LINK is a URL shortening service that allows users to shorten long URLs into more manageable links. It also provides a dashboard to manage the shortened links. This project is developed by the GDSC team at the Del Institute of Technology. The project is developed using the Spring Boot-React stack.",
         link: "https://github.com/DeveloperDel/gdsc-link-fe"
+    },
+    {
+        title: "CaptionCraft",
+        image: captioncraft,
+        description: "AI-powered platform designed to elevate your social media caption. With the integration of LLM technology, CaptionCraft helps create captivating and tailored captions for social media post.",
+        link: "https://caption-craft-one.vercel.app/"
     },
     {
         title:"Genshin Impact Character App",
