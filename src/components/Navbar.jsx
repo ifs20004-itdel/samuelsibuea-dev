@@ -62,7 +62,7 @@ const Navbar = () => {
             Projects
           </NavLink>
           <NavLink
-            to={"/CV_latest.pdf"}
+            to={"/pdf/CV_latest.pdf"}
             target="_blank"
             rel="noopener noreferrer"
             onClick={toggleMenu}

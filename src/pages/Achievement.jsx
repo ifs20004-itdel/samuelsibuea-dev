@@ -4,15 +4,15 @@ import certificateList from "../data/certificateList";
 import certificateEventList from "../data/certificateEventList";
 import list from "../data/achievementList";
 import * as constant from "../constant/constant";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css";
 
 import Navbar from "../components/Navbar";
 import Subtitle from "../components/Subtitle/Subtitle";
 
 function Achievement() {
-  const certificatePerRow = 3;
-  const courses = [];
-  const eventIT = [];
-
   const businessAcvTemp = [];
   const itAcvTemp = [];
   const businessAcv = [];
@@ -28,16 +28,6 @@ function Achievement() {
     } else {
       icpcTemp.push(list[i]);
     }
-  }
-
-  for (let i = 0; i < certificateList.length; i += certificatePerRow) {
-    const row = certificateList.slice(i, i + certificatePerRow);
-    courses.push(row);
-  }
-
-  for (let i = 0; i < certificateEventList.length; i += certificatePerRow) {
-    const row = certificateEventList.slice(i, i + certificatePerRow);
-    eventIT.push(row);
   }
 
   for (let i = 0; i < businessAcvTemp.length; i += constant.CERTIFICATEROW) {
@@ -57,7 +47,7 @@ function Achievement() {
       <Navbar />
       <div className=" space-y-12 w-3/4 m-auto py-12">
         <div className="flex flex-col">
-          <Subtitle title={"Competition"}/>
+          <Subtitle title={"Competition"} />
           <p className="-sm md:text-base font-bold underline p-5 md:p-2 text">
             International Collegiate Programming Contest
           </p>
@@ -91,7 +81,7 @@ function Achievement() {
             ))}
           </div>
           <p className="text-sm md:text-base font-bold px-3 pt-5 underline">
-            Others
+            Hackathons & CP
           </p>
           <div className="md:w-full m-auto">
             {itAcv.map((row, rowIndex) => (
@@ -112,37 +102,53 @@ function Achievement() {
         </div>
         <div className="flex flex-col">
           <Subtitle title={"Course Certificates"} />
-          {courses.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex space-x-7 py-3 justify-center animate-fade-up"
+          <div>
+            <Swiper
+              className="py-5"
+              spaceBetween={20}
+              slidesPerView={3}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
             >
-              {row.map((certificate, index) => (
-                <Certificate
-                  key={index}
-                  title={certificate.title}
-                  image={certificate.image}
-                />
+              {certificateList.map((item, idx) => (
+                <SwiperSlide key={idx}>
+                  <Certificate
+                    key={idx}
+                    title={item.title}
+                    image={item.image}
+                  />
+                </SwiperSlide>
               ))}
-            </div>
-          ))}
+            </Swiper>
+          </div>
         </div>
         <div className="flex flex-col">
-          <Subtitle title={"Event Certificates"} />
-          {eventIT.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex space-x-7 py-3 justify-center animate-fade-up"
+          <Subtitle title={"Tech Webinar Certificates"} />
+          <div>
+            <Swiper
+              className="py-5"
+              spaceBetween={40}
+              slidesPerView={3}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
             >
-              {row.map((certificate, index) => (
-                <Certificate
-                  key={index}
-                  title={certificate.title}
-                  image={certificate.image}
-                />
+              {certificateEventList.map((item, idx) => (
+                <SwiperSlide key={idx} className="pb-5">
+                  <Certificate
+                    key={idx}
+                    title={item.title}
+                    image={item.image}
+                  />
+                </SwiperSlide>
               ))}
-            </div>
-          ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>

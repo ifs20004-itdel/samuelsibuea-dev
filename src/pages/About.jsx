@@ -19,7 +19,7 @@ function About() {
     <div className="flex flex-col w-full font-poppins bg-gray-200">
       <Navbar />
 
-      <div className=" hidden md:flex align-middle justify-center py-12  bg-slate-200 shadow-md rounded-b-full">
+      <div className=" hidden md:flex align-middle justify-center py-12 bg-gradient-to-t from-sky-800 via-sky-500  shadow-md rounded-b-full">
         <img
           className="w-3/6 md:w-2/5 rounded-xl animate-jump-in animate-once"
           src={samuel_google}
@@ -32,7 +32,7 @@ function About() {
       </div>
 
       <div className="flex md:space-x-16 animate-fade-up">
-        <div className="bg-slate-300 w-1/4 rounded-e-full md:block hidden" />
+        <div className="bg-sky-600 w-1/4 rounded-e-full md:block hidden" />
         <div className="flex flex-row gap-x-10">
           <div className="my-10">
             <Subtitle title={"Education"} />
@@ -65,7 +65,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="bg-slate-300 w-1/4 rounded-s-full  md:block hidden" />
+        <div className="bg-sky-600 w-1/4 rounded-s-full  md:block hidden" />
       </div>
       <div className="w-3/4 m-auto justify-center">
         <h3 className="font-bold text-xl pt-5 text-center">Tools & Skills</h3>
