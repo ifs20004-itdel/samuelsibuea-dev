@@ -25,7 +25,7 @@ const certificateList = [
         image: spring_boot_udemy,
     },
     {
-        image: "Google Cloud Dasar",
+        title: "Google Cloud Dasar",
         image: gcloud_1
     },
     {

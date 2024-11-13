@@ -26,6 +26,4 @@ const certificateEventList = [
         image: iox2024
     }
 ] 
-
-
 export default certificateEventList;

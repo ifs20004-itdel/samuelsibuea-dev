@@ -5,7 +5,7 @@ import certificateEventList from "../data/certificateEventList";
 import list from "../data/achievementList";
 import * as constant from "../constant/constant";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 
@@ -100,55 +100,70 @@ function Achievement() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col">
-          <Subtitle title={"Course Certificates"} />
-          <div>
-            <Swiper
-              className="py-5"
-              spaceBetween={20}
-              slidesPerView={3}
-              loop={true}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination]}
-            >
-              {certificateList.map((item, idx) => (
-                <SwiperSlide key={idx}>
-                  <Certificate
-                    key={idx}
-                    title={item.title}
-                    image={item.image}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+
+        <Subtitle title={"Course Certificates"} />
+        <div>
+          <Swiper
+            className="py-5"
+            spaceBetween={20}
+            centeredSlides={true}
+            lazyPreloadPrevNext={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={3}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -5,
+              depth: 395,
+              modifier: 1,
+            }}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            effect={"coverflow"}
+            modules={[EffectCoverflow, Autoplay, Pagination]}
+          >
+            {certificateList.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <Certificate key={idx} title={item.title} image={item.image} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <div className="flex flex-col">
+        <div>
           <Subtitle title={"Tech Webinar Certificates"} />
-          <div>
-            <Swiper
-              className="py-5"
-              spaceBetween={40}
-              slidesPerView={3}
-              loop={true}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination]}
-            >
-              {certificateEventList.map((item, idx) => (
-                <SwiperSlide key={idx} className="pb-5">
-                  <Certificate
-                    key={idx}
-                    title={item.title}
-                    image={item.image}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+          <Swiper
+            className="py-5"
+            spaceBetween={20}
+            centeredSlides={true}
+            lazyPreloadPrevNext={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={3}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -5,
+              depth: 395,
+              modifier: 1,
+            }}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            effect={"coverflow"}
+            modules={[EffectCoverflow, Autoplay, Pagination]}
+          >
+            {certificateEventList.map((item, idx) => (
+              <SwiperSlide key={idx} className="mb-5">
+                <Certificate key={idx} title={item.title} image={item.image} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>

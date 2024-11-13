@@ -23,7 +23,6 @@
     "react-pdf": "^9.1.1",
     "react-router-dom": "^6.22.0",
     "react-tiny-fab": "^4.0.4",
-    "react-zoom-pan-pinch": "^3.3.0",
     "samuelsibuea-dev": "file:",
     "swiper": "^11.1.14",
     "tailwindcss-animated": "^1.0.1"
