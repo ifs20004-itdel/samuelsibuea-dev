@@ -7,7 +7,16 @@ import cloud4 from "/images/homepage/cloud4.png";
 import mountain from "/images/homepage/mountain.png";
 import fog from "/images/homepage/fog.png";
 import Subtitle from "../components/Subtitle/Subtitle";
-import { Fab } from "react-tiny-fab";
+import certificateList from "../data/certificateList";
+import certificateEventList from "../data/certificateEventList";
+import achievementList from "../data/achievementList";
+import * as constant from "../constant/constant";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCreative, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-creative";
 
 const Home = () => {
   return (
@@ -16,25 +25,27 @@ const Home = () => {
         pages={4}
         className="bg-gradient-to-b from-sky-800 to-sky-100 text-white"
       >
+        {/* Background mountain and cloud */}
         <ParallaxLayer offset={0} speed={-0.25} className="z-0">
           <img src={cloud} className="opacity-30" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.5} speed={-0.1} className="z-10 min-w-full">
-          {/* <ParallaxLayer offset={1} speed={-0.95} className="z-10 min-w-full"> */}
           <img
             src={mountain}
             className="absolute bottom-0 min-w-full scale-100 "
           />
         </ParallaxLayer>
-        <ParallaxLayer className="z-10 min-w-full">
-          <Fab
-            
-            alwaysShowTitle={true}
-          >
 
-          </Fab>
-        </ParallaxLayer>
+        {/* Page 3-4 bg*/}
+        <ParallaxLayer
+          offset={2}
+          factor={2}
+          speed={0}
+          className="bg-gradient-to-t from-sky-900 z-0"
+        />
+
+        {/* Welcome Dev message */}
         <ParallaxLayer offset={0.3} speed={-0.6} className="z-10 align-middle">
           <h1 className="text-5xl font-bold text-center font-wicked">
             Welcome, fellow developer
@@ -55,7 +66,7 @@ const Home = () => {
           factor={1}
           speed={-0.4}
           horizontal
-          className="z-30 min-w-full speed speed-fast"
+          className="z-20 min-w-full speed speed-fast"
         >
           <img
             src={cloud1}
@@ -68,7 +79,7 @@ const Home = () => {
           offset={0}
           speed={-0.5}
           horizontal
-          className="z-30 min-w-full speed speed-fast"
+          className="z-20 min-w-full speed speed-fast"
         >
           <img src={cloud3} width={450} className="absolute top-72 left-2/4 " />
         </ParallaxLayer>
@@ -77,7 +88,7 @@ const Home = () => {
           offset={0}
           speed={-0.5}
           horizontal
-          className="z-30 min-w-full speed speed-slow"
+          className="z-20 min-w-full speed speed-slow"
         >
           <img src={cloud4} width={150} className="absolute top-64 right-36 " />
         </ParallaxLayer>
@@ -89,7 +100,7 @@ const Home = () => {
           offset={0}
           speed={0.4}
           horizontal
-          className="z-30 min-w-full speed speed-slow"
+          className="z-20 min-w-full speed speed-slow"
         >
           <img src={cloud2} width={250} className="absolute top-5 left-1/4" />
         </ParallaxLayer>
@@ -98,7 +109,7 @@ const Home = () => {
           offset={0}
           speed={1}
           horizontal
-          className="z-30 min-w-full speed speed-medium"
+          className="z-20 min-w-full speed speed-medium"
         >
           <img src={cloud4} width={250} className="absolute top-32 left-24" />
         </ParallaxLayer>
@@ -107,25 +118,13 @@ const Home = () => {
           offset={0}
           speed={0.5}
           horizontal
-          className="z-30 min-w-full speed speed-fast"
+          className="z-20 min-w-full speed speed-fast"
         >
           <img src={cloud1} width={250} className="absolute top-64 left-1/4" />
         </ParallaxLayer>
 
-        {/* Smooth transition background color */}
-        <ParallaxLayer
-          offset={1}
-          factor={2}
-          speed={-0.1}
-          className="bg-gradient-to-t from-sky-300 "
-        ></ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2}
-          factor={1}
-          speed={0.3}
-          className="bg-gradient-to-t from-sky-800 z-40"
-        >
+        {/* Content page 3 */}
+        <ParallaxLayer offset={2} factor={1} speed={0.5} className="z-20">
           <div className="text-center text-3xl font-wicked">
             <h1 className="text-6xl px-52 pt-14 pb-5">
               Samuel Immanuel Herlinton Sibuea
@@ -144,7 +143,7 @@ const Home = () => {
               <a
                 type="button"
                 href="./about"
-                className="text-white bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:bg-gradient-to-br py-2 px-3 my-3 shadow-lg rounded-lg"
+                className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:bg-gradient-to-br py-2 px-3 my-3 shadow-lg rounded-lg"
               >
                 About me
               </a>
@@ -178,6 +177,209 @@ const Home = () => {
                   <div className="tag">JIRA</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </ParallaxLayer>
+
+        {/* Content page 4 */}
+        <ParallaxLayer offset={3} speed={0.1} factor={1} className="z-20">
+          <div className="flex flex-row gap-x-2 w-11/12 mx-auto my-20 rounded-3xl z-20">
+            <div className=" w-2/4 p-12 bg-gradient-to-r from-sky-900 via-sky-800 to-sky-700 shadow-2xl rounded-3xl">
+              <h1 className="font-wicked text-5xl py-3">Discover More</h1>
+              <p>
+                Check out my latest progression in this exciting tech journey!
+                Explore my portfolio to see my projects that showcase my
+                expertise in cutting-edge frameworks. Your thoughts and feedback
+                are always welcome!.
+              </p>
+              <div className="flex flex-row text-center py-10">
+                <div className="w-1/4 m-auto ">
+                  <div className="rounded-full flex justify-center items-center pb-3">
+                    <img
+                      src="/images/homepage/achievement.png"
+                      alt=""
+                      width={50}
+                    />
+                  </div>
+                  <p>Achievement</p>
+                </div>
+                <div className="w-1/4 m-auto">
+                  <div className="rounded-full flex justify-center items-center pb-3">
+                    <img
+                      src="/images/homepage/achievement.png"
+                      alt=""
+                      width={50}
+                    />
+                  </div>
+                  <p>Experience</p>
+                </div>
+                <div className="w-1/4 m-auto ">
+                  <div className="flex justify-center items-center pb-3">
+                    <img
+                      src="/images/homepage/achievement.png"
+                      alt=""
+                      width={50}
+                    />
+                  </div>
+                  <p>Project</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-2/4 m-auto">
+              <Swiper
+                navigation={true}
+                pagination={{
+                  clickable: true,
+                }}
+                draggable={true}
+                grabCursor={true}
+                slidesPerView={1}
+                loop={true}
+                modules={[Navigation, Pagination]}
+                className="bg-sky-100 h-[450px] my-2 rounded-xl py-3 text-2xl tracking-wider "
+              >
+                <SwiperSlide>
+                  <div className="content-center">
+                    <h2 className="font-wicked text-center text-black py-5">
+                      Achievement
+                    </h2>
+                    <div className="grid grid-cols-2 grid-rows-2 w-5/6 m-auto gap-y-2">
+                      <div>
+                        <Swiper
+                          pagination={{ clickable: true }}
+                          effect={"creative"}
+                          creativeEffect={{
+                            prev: {
+                              shadow: false,
+                              translate: [0, 0, -400],
+                            },
+                            next: {
+                              translate: ["100%", 0, 0],
+                            },
+                          }}
+                          modules={[EffectCreative, Pagination]}
+                          loop={true}
+                        >
+                          {certificateList.map((item, idx) =>
+                            idx < 5 ? (
+                              <SwiperSlide key={idx}>
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="h-full m-auto object-fill"
+                                  width={220}
+                                />
+                              </SwiperSlide>
+                            ) : null
+                          )}
+                        </Swiper>
+                      </div>
+                      <div>
+                        <Swiper
+                          pagination={{ clickable: true }}
+                          effect={"creative"}
+                          creativeEffect={{
+                            prev: {
+                              shadow: false,
+                              translate: [0, 0, -400],
+                            },
+                            next: {
+                              translate: ["100%", 0, 0],
+                            },
+                          }}
+                          modules={[EffectCreative, Pagination]}
+                          loop={true}
+                        >
+                          {certificateEventList.map((item, idx) => (
+                            <SwiperSlide key={idx}>
+                              <img
+                                src={item.image}
+                                alt={item.title}
+                                className="h-full m-auto object-fill"
+                                width={220}
+                              />
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
+                      </div>
+                      <div>
+                        <Swiper
+                          pagination={{ clickable: true }}
+                          effect={"creative"}
+                          creativeEffect={{
+                            prev: {
+                              shadow: false,
+                              translate: [0, 0, -400],
+                            },
+                            next: {
+                              translate: ["100%", 0, 0],
+                            },
+                          }}
+                          modules={[EffectCreative, Pagination]}
+                          loop={true}
+                        >
+                          {achievementList
+                            .filter((item) => item.type === constant.ICPC)
+                            .map((item, idx) => (
+                              <SwiperSlide key={idx}>
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="h-full m-auto object-fill"
+                                  width={220}
+                                />
+                              </SwiperSlide>
+                            ))}
+                        </Swiper>
+                      </div>
+                      <div>
+                        <Swiper
+                          pagination={{ clickable: true }}
+                          effect={"creative"}
+                          creativeEffect={{
+                            prev: {
+                              shadow: false,
+                              translate: [0, 0, -400],
+                            },
+                            next: {
+                              translate: ["100%", 0, 0],
+                            },
+                          }}
+                          modules={[EffectCreative, Pagination]}
+                          loop={true}
+                        >
+                          {achievementList
+                            .filter((item) => item.type === constant.IT)
+                            .map((item, idx) => (
+                              <SwiperSlide key={idx}>
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="h-full m-auto object-fill"
+                                  width={220}
+                                />
+                              </SwiperSlide>
+                            ))}
+                        </Swiper>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="content-center ">
+                    <h2 className="font-wicked text-center text-black py-5">
+                      Experience
+                    </h2>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="content-center ">
+                    <h2 className="font-wicked text-center text-black">
+                      Project
+                    </h2>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </ParallaxLayer>
