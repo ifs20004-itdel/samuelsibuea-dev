@@ -1,4 +1,5 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import NavigationBarItem from "../components/NavigationBarItem/NavigationBarItem.jsx";
 import cloud from "/images/homepage/clouds.png";
 import cloud1 from "/images/homepage/cloud1.png";
 import cloud2 from "/images/homepage/cloud2.png";
@@ -10,15 +11,23 @@ import Subtitle from "../components/Subtitle/Subtitle";
 import certificateList from "../data/certificateList";
 import certificateEventList from "../data/certificateEventList";
 import achievementList from "../data/achievementList";
+import projectList from "../data/projectList.jsx";
+import expLogoList from "../data/experiencesLogoList.jsx"
 import * as constant from "../constant/constant";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative, Navigation, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCreative,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
 
 const Home = () => {
+  const color = ['blue', 'green', 'red', 'yellow', 'amber'];
   return (
     <div>
       <Parallax
@@ -37,10 +46,10 @@ const Home = () => {
           />
         </ParallaxLayer>
 
-        {/* Page 3-4 bg*/}
+        {/* Page 3-5 bg*/}
         <ParallaxLayer
           offset={2}
-          factor={2}
+          factor={3}
           speed={0}
           className="bg-gradient-to-t from-sky-900 z-0"
         />
@@ -182,7 +191,7 @@ const Home = () => {
         </ParallaxLayer>
 
         {/* Content page 4 */}
-        <ParallaxLayer offset={3} speed={0.1} factor={1} className="z-20">
+        <ParallaxLayer offset={2.9} factor={1.5} speed={0.7} className="z-20">
           <div className="flex flex-row gap-x-2 w-11/12 mx-auto my-20 rounded-3xl z-20">
             <div className=" w-2/4 p-12 bg-gradient-to-r from-sky-900 via-sky-800 to-sky-700 shadow-2xl rounded-3xl">
               <h1 className="font-wicked text-5xl py-3">Discover More</h1>
@@ -194,34 +203,25 @@ const Home = () => {
               </p>
               <div className="flex flex-row text-center py-10">
                 <div className="w-1/4 m-auto ">
-                  <div className="rounded-full flex justify-center items-center pb-3">
-                    <img
-                      src="/images/homepage/achievement.png"
-                      alt=""
-                      width={50}
-                    />
-                  </div>
-                  <p>Achievement</p>
+                  <NavigationBarItem
+                    title="Achievement"
+                    image="/images/homepage/achievement.png"
+                    toLink="./achievement"
+                  />
                 </div>
                 <div className="w-1/4 m-auto">
-                  <div className="rounded-full flex justify-center items-center pb-3">
-                    <img
-                      src="/images/homepage/achievement.png"
-                      alt=""
-                      width={50}
-                    />
-                  </div>
-                  <p>Experience</p>
+                  <NavigationBarItem
+                    title="Experience"
+                    image="/images/homepage/experience.png"
+                    toLink="./experience"
+                  />
                 </div>
                 <div className="w-1/4 m-auto ">
-                  <div className="flex justify-center items-center pb-3">
-                    <img
-                      src="/images/homepage/achievement.png"
-                      alt=""
-                      width={50}
-                    />
-                  </div>
-                  <p>Project</p>
+                  <NavigationBarItem
+                    title="Project"
+                    image="/images/homepage/projects.png"
+                    toLink="./projects"
+                  />
                 </div>
               </div>
             </div>
@@ -366,17 +366,58 @@ const Home = () => {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="content-center ">
+                  <div className="content-center w-5/6 m-auto ">
                     <h2 className="font-wicked text-center text-black py-5">
                       Experience
                     </h2>
+                    <div className="grid grid-cols-3 gap-5 items-center py-5 px-10">
+                      {expLogoList.map((items, i)=>(
+                        <img key={i} src={items.url} width={items.width} className="hover:scale-125"/>
+                      ))}
+                    </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="content-center ">
-                    <h2 className="font-wicked text-center text-black">
+                  <div className="content-center">
+                    <h2 className="font-wicked text-center text-black py-5">
                       Project
                     </h2>
+                    <div>
+                      <Swiper
+                        slidesPerView={1}
+                        loop={true}
+                        spaceBetween={20}
+                        className="w-3/4"
+                        autoplay={{
+                          delay: 3500,
+                          disableOnInteraction: false,
+                        }}
+                        modules={[Autoplay]}
+                      >
+                        {projectList.map((item, i) => (
+                          <SwiperSlide
+                            key={i}
+                            className={`text-white text-center bg-${color[i]}-500  rounded-3xl shadow-md p-5 min-h-[300px]`}
+                          >
+                            <div className="flex flex-col gap-y-5">
+                              <h2 className="font-wicked text-xs">
+                                {item.title}
+                              </h2>
+                              <p className="text-xs font-semibold justify-center">
+                                {item.description}
+                              </p>
+                              <div className="flex justify-center">
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  width={200}
+                                />
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
                   </div>
                 </SwiperSlide>
               </Swiper>
