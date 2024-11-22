@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import Navbar from "../components/Navbar";
 import Subtitle from "../components/Subtitle/Subtitle";
+import Copyright from "../components/Copyright/Copyright";
 
 function Achievement() {
   const businessAcvTemp = [];
@@ -165,6 +166,7 @@ function Achievement() {
           </Swiper>
         </div>
       </div>
+      <Copyright/>
     </div>
   );
 }

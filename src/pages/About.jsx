@@ -5,6 +5,8 @@ import skillList from "../data/skillList";
 import Navbar from "../components/Navbar";
 import PostCard from "../components/PostCard/PostCard";
 import Subtitle from "../components/Subtitle/Subtitle";
+import Footer from "../components/Footer/Footer";
+import Copyright from "../components/Copyright/Copyright";
 
 function About() {
   const SkillCardsPerRow = 4;
@@ -53,13 +55,13 @@ function About() {
                 and <b>Technopreneurship</b>. I have participated in several
                 hackathons and gained extensive exposure to programming
                 competitions such as Schematics ITS and the ICPC Asia Jakarta
-                Regional. I also have known as the former lead of GDSC <b>(Google
-                Developer Student Clubs)</b> {" "} in my campus, one of the biggest tech
-                community for student.
+                Regional. I also have known as the former lead of GDSC{" "}
+                <b>(Google Developer Student Clubs)</b> in my campus, one of the
+                biggest tech community for student.
               </p>
               <p>
-                Working experience? I have through the <b>Bangkit Academy</b> {" "}
-                in Mobile Learning Path and as a Software Engineer intern at{" "}
+                Working experience? I have through the <b>Bangkit Academy</b> in
+                Mobile Learning Path and as a Software Engineer intern at{" "}
                 <b>PT. Astra Honda Motor</b>.
               </p>
             </div>
@@ -86,6 +88,7 @@ function About() {
           ))}
         </div>
       </div>
+      <Copyright/>
     </div>
   );
 }

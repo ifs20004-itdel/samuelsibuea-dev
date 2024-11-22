@@ -12,7 +12,7 @@ import certificateList from "../data/certificateList";
 import certificateEventList from "../data/certificateEventList";
 import achievementList from "../data/achievementList";
 import projectList from "../data/projectList.jsx";
-import expLogoList from "../data/experiencesLogoList.jsx"
+import expLogoList from "../data/experiencesLogoList.jsx";
 import * as constant from "../constant/constant";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -25,17 +25,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
+import Footer from "../components/Footer/Footer.jsx";
 
 const Home = () => {
-  const color = ['blue', 'green', 'red', 'yellow', 'amber'];
+  const color = [
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-red-500",
+    "bg-yellow-500",
+    "bg-amber-500",
+  ];
   return (
     <div>
       <Parallax
-        pages={4}
+        pages={4.5}
         className="bg-gradient-to-b from-sky-800 to-sky-100 text-white"
       >
         {/* Background mountain and cloud */}
-        <ParallaxLayer offset={0} speed={-0.25} className="z-0">
+        <ParallaxLayer offset={0} speed={-0.2} className="z-0">
           <img src={cloud} className="opacity-30" />
         </ParallaxLayer>
 
@@ -51,21 +58,24 @@ const Home = () => {
           offset={2}
           factor={3}
           speed={0}
-          className="bg-gradient-to-t from-sky-900 z-0"
+          className="bg-gradient-to-t from-blue-700 z-0"
         />
 
         {/* Welcome Dev message */}
-        <ParallaxLayer offset={0.3} speed={-0.6} className="z-10 align-middle">
+        <ParallaxLayer offset={0.3} speed={-0.3} className="z-10 align-middle">
           <h1 className="text-5xl font-bold text-center font-wicked">
             Welcome, fellow developer
           </h1>
         </ParallaxLayer>
 
         {/* Fog Layer */}
-        <ParallaxLayer offset={0.9} className="z-10 opacity-90">
+        <ParallaxLayer offset={0.8} className="z-10 opacity-90">
           <img src={fog} alt="fog" className="min-w-full" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.8} className="z-10 opacity-90">
+        <ParallaxLayer offset={0.7} className="z-10 opacity-90">
+          <img src={fog} alt="fog" className="min-w-full" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.6} className="z-10 opacity-90">
           <img src={fog} alt="fog" className="min-w-full" />
         </ParallaxLayer>
 
@@ -133,14 +143,14 @@ const Home = () => {
         </ParallaxLayer>
 
         {/* Content page 3 */}
-        <ParallaxLayer offset={2} factor={1} speed={0.5} className="z-20">
+        <ParallaxLayer offset={2} speed={0.4} className="z-20">
           <div className="text-center text-3xl font-wicked">
             <h1 className="text-6xl px-52 pt-14 pb-5">
               Samuel Immanuel Herlinton Sibuea
             </h1>
             <p className="tracking-wider">Software Engineer</p>
           </div>
-          <div className="flex flex-row w-3/4 py-16 m-auto gap-x-14 text-justify font-poppins">
+          <div className="flex flex-row w-3/4 pt-16 pb-6 m-auto gap-x-14 text-justify font-poppins">
             <div className="w-1/2">
               <p>
                 I'm a Software Engineer with a strong passion for competition, a
@@ -190,9 +200,8 @@ const Home = () => {
           </div>
         </ParallaxLayer>
 
-        {/* Content page 4 */}
-        <ParallaxLayer offset={2.9} factor={1.5} speed={0.7} className="z-20">
-          <div className="flex flex-row gap-x-2 w-11/12 mx-auto my-20 rounded-3xl z-20">
+        <ParallaxLayer offset={2.9} speed={0.4} factor={1} className="z-20">
+          <div className="flex flex-row gap-x-2 w-11/12 mx-auto rounded-3xl z-20 font-poppins">
             <div className=" w-2/4 p-12 bg-gradient-to-r from-sky-900 via-sky-800 to-sky-700 shadow-2xl rounded-3xl">
               <h1 className="font-wicked text-5xl py-3">Discover More</h1>
               <p>
@@ -202,18 +211,18 @@ const Home = () => {
                 are always welcome!.
               </p>
               <div className="flex flex-row text-center py-10">
-                <div className="w-1/4 m-auto ">
-                  <NavigationBarItem
-                    title="Achievement"
-                    image="/images/homepage/achievement.png"
-                    toLink="./achievement"
-                  />
-                </div>
                 <div className="w-1/4 m-auto">
                   <NavigationBarItem
                     title="Experience"
                     image="/images/homepage/experience.png"
                     toLink="./experience"
+                  />
+                </div>
+                <div className="w-1/4 m-auto ">
+                  <NavigationBarItem
+                    title="Achievement"
+                    image="/images/homepage/achievement.png"
+                    toLink="./achievement"
                   />
                 </div>
                 <div className="w-1/4 m-auto ">
@@ -238,6 +247,50 @@ const Home = () => {
                 modules={[Navigation, Pagination]}
                 className="bg-sky-100 h-[450px] my-2 rounded-xl py-3 text-2xl tracking-wider "
               >
+                                <SwiperSlide>
+                  <div className="content-center">
+                    <h2 className="font-wicked text-center text-black py-5">
+                      Project
+                    </h2>
+                    <div>
+                      <Swiper
+                        slidesPerView={1}
+                        loop={true}
+                        spaceBetween={20}
+                        className="w-3/4"
+                        autoplay={{
+                          delay: 3500,
+                          disableOnInteraction: false,
+                        }}
+                        modules={[Autoplay]}
+                      >
+                        {projectList.map((item, i) => (
+                          <SwiperSlide
+                            key={i}
+                            className={`text-white text-center ${color[i]}  rounded-3xl shadow-md p-5 min-h-[300px]`}
+                          >
+                            <div className="flex flex-col gap-y-5">
+                              <h2 className="font-wicked text-xs">
+                                {item.title}
+                              </h2>
+                              <p className="text-xs font-semibold justify-center">
+                                {item.description}
+                              </p>
+                              <div className="flex justify-center">
+                                <img
+                                  loading="lazy"
+                                  src={item.image}
+                                  alt={item.title}
+                                  width={200}
+                                />
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
+                  </div>
+                </SwiperSlide>
                 <SwiperSlide>
                   <div className="content-center">
                     <h2 className="font-wicked text-center text-black py-5">
@@ -264,6 +317,7 @@ const Home = () => {
                             idx < 5 ? (
                               <SwiperSlide key={idx}>
                                 <img
+                                  loading="lazy"
                                   src={item.image}
                                   alt={item.title}
                                   className="h-full m-auto object-fill"
@@ -293,6 +347,7 @@ const Home = () => {
                           {certificateEventList.map((item, idx) => (
                             <SwiperSlide key={idx}>
                               <img
+                                loading="lazy"
                                 src={item.image}
                                 alt={item.title}
                                 className="h-full m-auto object-fill"
@@ -323,6 +378,7 @@ const Home = () => {
                             .map((item, idx) => (
                               <SwiperSlide key={idx}>
                                 <img
+                                  loading="lazy"
                                   src={item.image}
                                   alt={item.title}
                                   className="h-full m-auto object-fill"
@@ -353,6 +409,7 @@ const Home = () => {
                             .map((item, idx) => (
                               <SwiperSlide key={idx}>
                                 <img
+                                  loading="lazy"
                                   src={item.image}
                                   alt={item.title}
                                   className="h-full m-auto object-fill"
@@ -371,58 +428,28 @@ const Home = () => {
                       Experience
                     </h2>
                     <div className="grid grid-cols-3 gap-5 items-center py-5 px-10">
-                      {expLogoList.map((items, i)=>(
-                        <img key={i} src={items.url} width={items.width} className="hover:scale-125"/>
+                      {expLogoList.map((items, i) => (
+                        <img
+                          loading="lazy"
+                          key={i}
+                          src={items.url}
+                          width={items.width}
+                          className="hover:scale-125"
+                        />
                       ))}
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="content-center">
-                    <h2 className="font-wicked text-center text-black py-5">
-                      Project
-                    </h2>
-                    <div>
-                      <Swiper
-                        slidesPerView={1}
-                        loop={true}
-                        spaceBetween={20}
-                        className="w-3/4"
-                        autoplay={{
-                          delay: 3500,
-                          disableOnInteraction: false,
-                        }}
-                        modules={[Autoplay]}
-                      >
-                        {projectList.map((item, i) => (
-                          <SwiperSlide
-                            key={i}
-                            className={`text-white text-center bg-${color[i]}-500  rounded-3xl shadow-md p-5 min-h-[300px]`}
-                          >
-                            <div className="flex flex-col gap-y-5">
-                              <h2 className="font-wicked text-xs">
-                                {item.title}
-                              </h2>
-                              <p className="text-xs font-semibold justify-center">
-                                {item.description}
-                              </p>
-                              <div className="flex justify-center">
-                                <img
-                                  src={item.image}
-                                  alt={item.title}
-                                  width={200}
-                                />
-                              </div>
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
                     </div>
                   </div>
                 </SwiperSlide>
               </Swiper>
             </div>
           </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3.5}>
+          <img src="/images/homepage/footer.png" alt="" className="w-full opacity-75" />        
+        </ParallaxLayer>
+        <ParallaxLayer offset={3.5}>
+          <Footer />
         </ParallaxLayer>
       </Parallax>
     </div>

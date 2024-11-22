@@ -7,6 +7,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import organizationalExpList from "../data/organizationalExpList";
+import Copyright from "../components/Copyright/Copyright";
 
 function Experience() {
   return (
@@ -170,6 +171,7 @@ function Experience() {
             </div>
           </div>
         </div>
+        <Copyright/>
       </div>
   );
 }

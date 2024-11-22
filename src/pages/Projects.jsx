@@ -2,6 +2,7 @@ import React from "react";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import data from "../data/projectList.jsx";
 import Navbar from "../components/Navbar.jsx";
+import Copyright from "../components/Copyright/Copyright.jsx";
 
 function Projects() {
   return (
@@ -25,6 +26,7 @@ function Projects() {
           ))}
         </div>
       </div>
+      <Copyright/>
     </div>
   );
 }
