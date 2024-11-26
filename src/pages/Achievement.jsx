@@ -43,70 +43,78 @@ function Achievement() {
   }
 
   return (
-    <div className="flex flex-col font-poppins w-full bg-gray-200">
+    <div className="font-poppins w-full bg-gray-200 h-full">
       <Navbar />
-      <div className=" space-y-12 w-3/4 m-auto py-12">
-        <div className="flex flex-col">
+      <div className="space-y-3 md:space-y-12 w-3/4 m-auto py-12">
+        <div>
           <Subtitle title={"Competition"} />
-          <p className="-sm md:text-base font-bold underline p-5 md:p-2 text">
-            International Collegiate Programming Contest
-          </p>
-          {icpc.map((icpcRow, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex flex-col md:flex-row space-x-0 md:space-x-7 w-5/6 m-auto md:w-full py-3 justify-center animate-fade-up"
-            >
-              {icpcRow.map((acv, index) => (
-                <Certificate key={index} title={acv.title} image={acv.image} />
+          <div className="py-5">
+            <p className="text-base md:font-bold underline md:p-2">
+              International Collegiate Programming Contest
+            </p>
+            {icpc.map((icpcRow, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="grid grid-cols-2 md:flex md:flex-row w-full gap-5 py-3 justify-center animate-fade-up"
+              >
+                {icpcRow.map((acv, index) => (
+                  <Certificate
+                    key={index}
+                    title={acv.title}
+                    image={acv.image}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="py-5">
+            <p className="text-base md:font-bold underline md:p-2">
+              Business Case Competition
+            </p>
+            <div className="w-full m-auto">
+              {businessAcv.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="grid grid-cols-3 md:flex md:flex-row gap-3 w-full py-3 justify-center animate-fade-up"
+                >
+                  {row.map((acv, index) => (
+                    <Certificate
+                      key={index}
+                      title={acv.title}
+                      image={acv.image}
+                    />
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-          <p className="text-sm md:text-base font-bold p-2 underline">
-            Business Case Competition
-          </p>
-          <div className="w-full m-auto">
-            {businessAcv.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex flex-col md:flex-row space-x-0 md:space-x-7 w-3/4 md:w-full m-auto py-3 justify-center animate-fade-up"
-              >
-                {row.map((acv, index) => (
-                  <Certificate
-                    key={index}
-                    title={acv.title}
-                    image={acv.image}
-                  />
-                ))}
-              </div>
-            ))}
           </div>
-          <p className="text-sm md:text-base font-bold px-3 pt-5 underline">
-            Hackathons & CP
-          </p>
-          <div className="md:w-full m-auto">
-            {itAcv.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="flex flex-col md:flex-row w-5/6 md:w-full space-x-0 md:space-x-7 py-3 m-auto animate-fade-up"
-              >
-                {row.map((acv, index) => (
-                  <Certificate
-                    key={index}
-                    title={acv.title}
-                    image={acv.image}
-                  />
-                ))}
-              </div>
-            ))}
+          <div className="py-5">
+            <p className="text-base md:font-bold underline md:p-2">
+              Hackathons & CP
+            </p>
+            <div className="md:w-full m-auto">
+              {itAcv.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="grid grid-cols-2 md:flex md:flex-row w-full gap-4 py-3 animate-fade-up"
+                >
+                  {row.map((acv, index) => (
+                    <Certificate
+                      key={index}
+                      title={acv.title}
+                      image={acv.image}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        <Subtitle title={"Course Certificates"} />
         <div>
+          <Subtitle title={"Course Certificates"} />
           <Swiper
-            className="py-5"
-            spaceBetween={20}
             centeredSlides={true}
+            className="pb-7 md:py-5"
             lazyPreloadPrevNext={true}
             autoplay={{
               delay: 3000,
@@ -136,7 +144,7 @@ function Achievement() {
         <div>
           <Subtitle title={"Tech Webinar Certificates"} />
           <Swiper
-            className="py-5"
+            className="pb-7 md:py-3"
             spaceBetween={20}
             centeredSlides={true}
             lazyPreloadPrevNext={true}
@@ -166,7 +174,9 @@ function Achievement() {
           </Swiper>
         </div>
       </div>
-      <Copyright/>
+      <div>
+        <Copyright/>
+      </div>
     </div>
   );
 }

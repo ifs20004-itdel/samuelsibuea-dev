@@ -20,31 +20,31 @@ function About() {
   return (
     <div className="flex flex-col w-full font-poppins bg-gray-200">
       <Navbar />
-
-      <div className=" hidden md:flex align-middle justify-center py-12 bg-gradient-to-t from-sky-800 via-sky-500  shadow-md rounded-b-full">
+      <div className="hidden md:flex align-middle justify-center py-12 bg-gradient-to-t from-sky-800 via-sky-500  shadow-md rounded-b-full">
         <img
           className="w-3/6 md:w-2/5 rounded-xl animate-jump-in animate-once"
           src={samuel_google}
           alt="samuel"
         />
       </div>
-
       <div className="md:hidden flex justify-center align-middle mt-5 animate-jump-in animate-once ">
         <img className=" w-10/12 rounded-xl" src={samuel_google} alt="samuel" />
       </div>
 
       <div className="flex md:space-x-16 animate-fade-up">
         <div className="bg-sky-600 w-1/4 rounded-e-full md:block hidden" />
-        <div className="flex flex-row gap-x-10">
+        <div className="flex flex-col md:flex-row gap-x-10">
           <div className="my-10">
-            <Subtitle title={"Education"} />
+            <div className="px-8 md:px-0">
+              <Subtitle title={"Education"} />
+            </div>
             <PostCard />
           </div>
           <div className="flex flex-col w-3/4 m-auto text-justify ">
-            <h3 className="font-bold text-start md:text-xl text-base">
+            <h3 className="font-bold text-start md:text-xl text-sm pb-5 md:pb-0">
               About Me
             </h3>
-            <div className="md:text-base text-sm space-y-5">
+            <div className="md:text-base text-xs space-y-5">
               <p>
                 Lifetime learner who works as a Software Engineer. Have a strong
                 passion for competition, a keen sense of problem-solving, and a
@@ -69,13 +69,13 @@ function About() {
         </div>
         <div className="bg-sky-600 w-1/4 rounded-s-full  md:block hidden" />
       </div>
-      <div className="w-3/4 m-auto justify-center">
+      <div className="w-3/4 m-auto justify-center pt-5 md:py-0">
         <h3 className="font-bold text-xl pt-5 text-center">Tools & Skills</h3>
         <div className="space-y-5 pt-5 pb-20">
           {rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="flex space-x-3 md:space-x-7 justify-center"
+              className="flex space-x-4 md:space-x-7 justify-center"
             >
               {row.map((skill, index) => (
                 <SkillsCard

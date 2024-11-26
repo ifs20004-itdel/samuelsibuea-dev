@@ -44,7 +44,7 @@ const Navbar = () => {
         <ul
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } w-full md:space-x-10 md:block flex-col absolute md:static top-20 left-0 p-5 z-50 space-y-3 md:rounded-none rounded-b-lg bg-blue-700 md:bg-inherit `}
+          } w-full md:space-x-10 md:block flex-col absolute md:static top-20 left-0 p-5 z-50 space-y-3 md:rounded-none rounded-t-3xl rounded-b-3xl bg-sky-800 md:bg-inherit `}
         >
           <NavLink to="/" aria-current="page" onClick={toggleMenu}>
             Home

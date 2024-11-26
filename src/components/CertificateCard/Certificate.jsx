@@ -5,7 +5,7 @@ import "react-medium-image-zoom/dist/styles.css";
 function Certificate({ image, title }) {
   return (
     <div
-      class={`relative max-w-sm rounded-lg overflow-hidden cursor-pointer hover:scale-105 md:my-0 my-5`}
+      class={`max-w-sm rounded-lg overflow-hidden hover:scale-105`}
     >
       <Zoom>
         <img
@@ -19,4 +19,4 @@ function Certificate({ image, title }) {
   );
 }
 
-export default Certificate;
+export default Certificate
