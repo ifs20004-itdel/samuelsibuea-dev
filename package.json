@@ -12,7 +12,6 @@
   "dependencies": {
     "@fontsource/poppins": "^5.0.8",
     "@react-spring/parallax": "^9.7.5",
-    "@react-spring/web": "^9.7.5",
     "babel-plugin-macros": "^3.1.0",
     "gsap": "^3.12.5",
     "parcel": "^2.11.0",

@@ -17,7 +17,7 @@ function ExpCard({ job, company, date, file, job_type, description }) {
 
   return (
     <div>
-      <div className="flex flex-col font-poppins text-white bg-sky-800 rounded-lg py-5 md:py-7 px-10 my-5 shadow-slate-500 shadow-xl animate-fade-up animate-duration-700">
+      <div className="font-poppins text-white bg-sky-800 rounded-lg py-5 md:py-7 px-10 my-5 shadow-slate-500 shadow-xl animate-fade-up animate-duration-700">
         <h1 className="text-bold md:text-3xl text-xl text-sky-200 underline">
           {job}
         </h1>
@@ -26,7 +26,7 @@ function ExpCard({ job, company, date, file, job_type, description }) {
         <div className="flex flex-row gap-x-16">
           <div
             ref={pdfContainerRef}
-            className=" md:block hidden my-5 overflow-y-auto bg-transparent content-center"
+            className="md:block hidden my-5 overflow-y-auto bg-transparent content-center"
           >
             <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
               {Array.apply(null, Array(numPages))
@@ -48,12 +48,13 @@ function ExpCard({ job, company, date, file, job_type, description }) {
               className="cursor-pointer tracking-wide my-1 text-sm"
               href={file}
             >
-              [See here . . .]
+              [Open Certificate]
             </p>
           </div>
-          <div className="w-2/4">
-            <p className="pb-2 font-semibold text-green-300">{job_type}</p>
-            <div className="text-sm w-11/12">{description}</div>
+          <div className="md:w-2/4">
+            <p className="pb-2 font-semibold text-green-300" href={file}>{job_type}</p>
+            <div className="text-xs md:text-sm w-full md:w-11/12">{description}</div>
+            <p onClick={()=> window.open(file,"_blank")} className="md:hidden flex text-green-500 text-sm font-bold underline pt-5">Open Certificate</p>
           </div>
         </div>
       </div>

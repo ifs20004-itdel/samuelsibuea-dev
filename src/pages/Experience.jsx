@@ -11,9 +11,9 @@ import Copyright from "../components/Copyright/Copyright";
 
 function Experience() {
   return (
-    <div className="flex flex-col bg-gray-200">
+    <div className="h-full bg-gray-200">
       <Navbar />
-      <div className="md:w-3/4 m-auto">
+      <div className="w-3/4 m-auto">
           <div>
             <div className="pt-5">
               <Subtitle title="Work Experience" />

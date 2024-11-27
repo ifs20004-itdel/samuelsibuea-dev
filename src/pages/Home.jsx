@@ -26,6 +26,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
 import Footer from "../components/Footer/Footer.jsx";
+import { FaAngleDoubleDown } from "react-icons/fa";
+import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
+import { IoLogoDiscord } from "react-icons/io5";
 
 const Home = () => {
   const color = [
@@ -37,19 +40,112 @@ const Home = () => {
   ];
   return (
     <div>
+      {/* Mobile Display */}
+      <div className="block md:hidden bg-gradient-to-b from-sky-800 to-sky-100 text-white h-screen relative">
+        <div className="absolute inset-0 z-10">
+          <img
+            src={mountain}
+            alt="Mountain"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src={cloud}
+            alt="Cloud"
+            className="w-full h-1/2 object-cover opacity-70"
+          />
+        </div>
+        <div className="absolute top-40 z-20 w-full">
+          <img src={fog} alt="Fog Layer 1" className="w-full opacity-50" />
+        </div>
+        <div className="absolute bottom-0 z-20 w-full">
+          <img src={fog} alt="Fog Layer 2" className="w-full" />
+        </div>
+        <div className="absolute inset-0 z-40 flex flex-col items-center justify-center font-poppins">
+          <h1 className="text-3xl font-bold text-center font-wicked py-2">
+            Welcome, fellow developer
+          </h1>
+          <h2 className="text-xl font-semibold mt-2 ">
+            Samuel Immanuel Herlinton Sibuea
+          </h2>
+          <a
+            href="./about"
+            className="text-base m-5 py-2 px-4 bg-sky-700 rounded-xl shadow-2xl font-semibold"
+          >
+            About Me
+          </a>
+          <p className="w-3/4 text-white bg-sky-900 shadow-xl text-center rounded-lg p-3">
+            Check out my latest progression in this exciting tech journey!
+          </p>
+          <FaAngleDoubleDown className="m-5 animate-bounce" size={30} />
+          <div className="grid grid-cols-2 gap-5 text-center font-bold">
+            <a
+              className="bg-gradient-to-tr from-sky-600 to-sky-900 p-2 rounded-lg shadow-2xl"
+              href="./achievement"
+            >
+              Achievement
+            </a>
+            <a
+              className="bg-gradient-to-tr from-sky-600 to-sky-900 p-2 rounded-lg shadow-2xl"
+              href="./experience"
+            >
+              Experience
+            </a>
+            <a
+              className="bg-gradient-to-tr from-sky-600 to-sky-900 p-2 rounded-lg shadow-2xl"
+              href="./projects"
+            >
+              Projects
+            </a>
+            <a
+              className="bg-gradient-to-tr from-sky-600 to-sky-900 p-2 rounded-lg shadow-2xl"
+              onClick={() => window.open("pdf/CV_latest.pdf","_blank")}
+            >
+              Resume
+            </a>
+          </div>
+          <div className="absolute bottom-10 z-30">
+            <ul className="flex flex-row list-none gap-x-5">
+              <li>
+                <a href="https://www.instagram.com/samuelsibuea_1">
+                  <IoLogoInstagram size={30} color="black" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/samuel-sibuea">
+                  <IoLogoLinkedin size={30} color="black" />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ifs20004-itdel">
+                  <IoLogoGithub size={30} color="black" />
+                </a>
+              </li>
+              <li>
+                <a href="https://discordapp.com/users/703608800296304691">
+                  <IoLogoDiscord size={30} color="black" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Display */}
       <Parallax
         pages={4.5}
-        className="bg-gradient-to-b from-sky-800 to-sky-100 text-white"
+        className="hidden md:block bg-gradient-to-b from-sky-800 to-sky-100 text-white"
       >
         {/* Background mountain and cloud */}
-        <ParallaxLayer offset={0} speed={-0.2} className="z-0">
+        <ParallaxLayer offset={0} speed={-0.4} className="z-0 overflow-hidden">
           <img src={cloud} className="opacity-30" />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.5} speed={-0.1} className="z-10 min-w-full">
+        <ParallaxLayer offset={0.5} speed={-0.2} className="z-10">
           <img
             src={mountain}
-            className="absolute bottom-0 min-w-full scale-100 "
+            className="absolute bottom-0 min-w-full scale-100"
           />
         </ParallaxLayer>
 
@@ -69,13 +165,13 @@ const Home = () => {
         </ParallaxLayer>
 
         {/* Fog Layer */}
-        <ParallaxLayer offset={0.8} className="z-10 opacity-90">
-          <img src={fog} alt="fog" className="min-w-full" />
+        <ParallaxLayer offset={0.8} speed={-0.1} className="z-10 opacity-90">
+          <img src={fog} alt="fog" className="flex min-w-full" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.7} className="z-10 opacity-90">
-          <img src={fog} alt="fog" className="min-w-full" />
+        <ParallaxLayer offset={0.7} speed={-0.1} className="z-10 opacity-90">
+          <img src={fog} alt="fog" className="flex min-w-full" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.6} className="z-10 opacity-90">
+        <ParallaxLayer offset={0.6} speed={-0.1} className="z-10 opacity-90">
           <img src={fog} alt="fog" className="min-w-full" />
         </ParallaxLayer>
 
@@ -87,18 +183,14 @@ const Home = () => {
           horizontal
           className="z-20 min-w-full speed speed-fast"
         >
-          <img
-            src={cloud1}
-            width={250}
-            className="absolute top-12 right-1/4 "
-          />
+          <img src={cloud1} className="absolute top-12  w-[250px] right-1/4 " />
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={0}
           speed={-0.5}
           horizontal
-          className="z-20 min-w-full speed speed-fast"
+          className="flex z-20 min-w-full speed speed-fast"
         >
           <img src={cloud3} width={450} className="absolute top-72 left-2/4 " />
         </ParallaxLayer>
@@ -107,7 +199,7 @@ const Home = () => {
           offset={0}
           speed={-0.5}
           horizontal
-          className="z-20 min-w-full speed speed-slow"
+          className="flex z-20 min-w-full speed speed-slow"
         >
           <img src={cloud4} width={150} className="absolute top-64 right-36 " />
         </ParallaxLayer>
@@ -119,7 +211,7 @@ const Home = () => {
           offset={0}
           speed={0.4}
           horizontal
-          className="z-20 min-w-full speed speed-slow"
+          className="flex z-20 min-w-full speed speed-slow"
         >
           <img src={cloud2} width={250} className="absolute top-5 left-1/4" />
         </ParallaxLayer>
@@ -130,7 +222,7 @@ const Home = () => {
           horizontal
           className="z-20 min-w-full speed speed-medium"
         >
-          <img src={cloud4} width={250} className="absolute top-32 left-24" />
+          <img src={cloud4} className="absolute top-32 left-24 w-[250px]" />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -139,11 +231,11 @@ const Home = () => {
           horizontal
           className="z-20 min-w-full speed speed-fast"
         >
-          <img src={cloud1} width={250} className="absolute top-64 left-1/4" />
+          <img src={cloud1} className="absolute top-64 w-[250px] left-1/4" />
         </ParallaxLayer>
 
         {/* Content page 3 */}
-        <ParallaxLayer offset={2} speed={0.4} className="z-20">
+        <ParallaxLayer offset={2} speed={0.6} className="z-20">
           <div className="text-center text-3xl font-wicked">
             <h1 className="text-6xl px-52 pt-14 pb-5">
               Samuel Immanuel Herlinton Sibuea
@@ -200,7 +292,8 @@ const Home = () => {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.9} speed={0.4} factor={1} className="z-20">
+        {/* Content page 4 */}
+        <ParallaxLayer offset={2.9} speed={0.3} factor={1} className="z-20">
           <div className="flex flex-row gap-x-2 w-11/12 mx-auto rounded-3xl z-20 font-poppins">
             <div className=" w-2/4 p-12 bg-gradient-to-r from-sky-900 via-sky-800 to-sky-700 shadow-2xl rounded-3xl">
               <h1 className="font-wicked text-5xl py-3">Discover More</h1>
@@ -208,7 +301,7 @@ const Home = () => {
                 Check out my latest progression in this exciting tech journey!
                 Explore my portfolio to see my projects that showcase my
                 expertise in cutting-edge frameworks. Your thoughts and feedback
-                are always welcome!.
+                are always welcome!
               </p>
               <div className="flex flex-row text-center py-10">
                 <div className="w-1/4 m-auto">
@@ -247,7 +340,7 @@ const Home = () => {
                 modules={[Navigation, Pagination]}
                 className="bg-sky-100 h-[450px] my-2 rounded-xl py-3 text-2xl tracking-wider "
               >
-                                <SwiperSlide>
+                <SwiperSlide>
                   <div className="content-center">
                     <h2 className="font-wicked text-center text-black py-5">
                       Project
@@ -446,7 +539,11 @@ const Home = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.5}>
-          <img src="/images/homepage/footer.png" alt="" className="w-full opacity-75" />        
+          <img
+            src="/images/homepage/footer.png"
+            alt=""
+            className="w-full opacity-75"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={3.5}>
           <Footer />

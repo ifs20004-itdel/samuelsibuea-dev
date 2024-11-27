@@ -16,7 +16,7 @@
 
 /* ANIMATION */
 .speed{
-    animation: bounce infinite ease-in-out;
+    animation: bounce-vertical infinite ease-in-out;
 }
 
 .speed-slow{
@@ -31,7 +31,7 @@
   animation-duration: 5s;
 }
 
-@keyframes bounce {
+@keyframes bounce-vertical {
   0%, 100% {
     margin-left: -2%;
   }
