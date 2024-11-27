@@ -235,7 +235,7 @@ const Home = () => {
         </ParallaxLayer>
 
         {/* Content page 3 */}
-        <ParallaxLayer offset={2} speed={0.6} className="z-20">
+        <ParallaxLayer offset={2} speed={0.5} className="z-20">
           <div className="text-center text-3xl font-wicked">
             <h1 className="text-6xl px-52 pt-14 pb-5">
               Samuel Immanuel Herlinton Sibuea
@@ -355,7 +355,10 @@ const Home = () => {
                           delay: 3500,
                           disableOnInteraction: false,
                         }}
-                        modules={[Autoplay]}
+                        pagination={{
+                          clickable:true,
+                        }}
+                        modules={[Autoplay, Pagination]}
                       >
                         {projectList.map((item, i) => (
                           <SwiperSlide
