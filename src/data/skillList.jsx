@@ -8,6 +8,7 @@ import react_icon from '/icons/react-80.svg'
 import mysql_icon from '/icons/mysql-96.svg'
 import redis_icon from '/icons/redis-96.svg'
 import mongodb_icon from '/icons/mongodb-96.svg'
+import google_clouad_icon from '/icons/google-cloud-96.svg'
 
 
 
@@ -52,6 +53,10 @@ const skillList = [
         title: 'Mongo DB',
         image: mongodb_icon,
     },
+    {
+        title: 'Google Cloud',
+        image: google_clouad_icon
+    }
 ]
 
 export default skillList

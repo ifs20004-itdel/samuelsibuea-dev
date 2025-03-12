@@ -5,7 +5,6 @@ import skillList from "../data/skillList";
 import Navbar from "../components/Navbar";
 import PostCard from "../components/PostCard/PostCard";
 import Subtitle from "../components/Subtitle/Subtitle";
-import Footer from "../components/Footer/Footer";
 import Copyright from "../components/Copyright/Copyright";
 
 function About() {
@@ -46,23 +45,27 @@ function About() {
             </h3>
             <div className="md:text-base text-xs space-y-5">
               <p>
-                Lifetime learner who works as a Software Engineer. Have a strong
-                passion for competition, a keen sense of problem-solving, and a
-                commitment to continuous learning. I specialize in{" "}
-                <b>Java language</b>, <b>Backend Development</b> using{" "}
-                <b>Spring Boot</b>. I'm also interested in{" "}
-                <b>Android Development</b>, develop a web using <b>React</b>,
-                and <b>Technopreneurship</b>. I have participated in several
-                hackathons and gained extensive exposure to programming
-                competitions such as Schematics ITS and the ICPC Asia Jakarta
-                Regional. I also have known as the former lead of GDSC{" "}
-                <b>(Google Developer Student Clubs)</b> in my campus, one of the
-                biggest tech community for student.
+                I am a Software Engineer. Strong passion in learning all about programming stuff, 
+                eager to join competition, have a full commitment to continuous learning. 
+                Expert in{" "}
+                <b>Java language</b>, <b>Backend Development</b> by using{" "}
+                <b>Spring Boot</b>. But I'm also open to{" "}
+                <b>Android Development</b>, web development by using <b>Laravel</b>, <b>React</b>, and several js library,
+                and currently learn about <b>Data Engineering</b> utilizing cloud service. 
+                Have been participate in several programming and IT competitions such like the 
+                ICPC Asia Jakarta Regional Contest. 
+                Love to join an IT community, getting knowledge with other tech worker, 
+                notably mention,I was former lead of GDSC{" "}
+                <b>(Google Developer Student Clubs)</b> at my campus :).
               </p>
               <p>
-                Working experience? I have through the <b>Bangkit Academy</b> in
-                Mobile Learning Path and as a Software Engineer intern at{" "}
-                <b>PT. Astra Honda Motor</b>.
+                Currently work as <b>Trainee Data Engineer</b> at one of private banking in Indonesia.
+                Other experience as such:
+                <ul className="list-inside list-disc">
+                  <li><b>Bangkit Academy Batch 1 in 2023</b>: Mobile Dev Cohort</li>
+                  <li><b>Internship @Astra Honda Motor (AHM)</b>: Software Engineer </li>
+                  <li><b>Part Time @Pertamina Kontinental Surabaya</b>: Mobile Engineer</li>
+                </ul>
               </p>
             </div>
           </div>

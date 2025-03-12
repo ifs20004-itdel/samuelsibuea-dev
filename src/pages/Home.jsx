@@ -343,53 +343,6 @@ const Home = () => {
                 <SwiperSlide>
                   <div className="content-center">
                     <h2 className="font-wicked text-center text-black py-5">
-                      Project
-                    </h2>
-                    <div>
-                      <Swiper
-                        slidesPerView={1}
-                        loop={true}
-                        spaceBetween={20}
-                        className="w-3/4"
-                        autoplay={{
-                          delay: 3500,
-                          disableOnInteraction: false,
-                        }}
-                        pagination={{
-                          clickable:true,
-                        }}
-                        modules={[Autoplay, Pagination]}
-                      >
-                        {projectList.map((item, i) => (
-                          <SwiperSlide
-                            key={i}
-                            className={`text-white text-center ${color[i]}  rounded-3xl shadow-md p-5 min-h-[300px]`}
-                          >
-                            <div className="flex flex-col gap-y-5">
-                              <h2 className="font-wicked text-xs">
-                                {item.title}
-                              </h2>
-                              <p className="text-xs font-semibold justify-center">
-                                {item.description}
-                              </p>
-                              <div className="flex justify-center">
-                                <img
-                                  loading="lazy"
-                                  src={item.image}
-                                  alt={item.title}
-                                  width={200}
-                                />
-                              </div>
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="content-center">
-                    <h2 className="font-wicked text-center text-black py-5">
                       Achievement
                     </h2>
                     <div className="grid grid-cols-2 grid-rows-2 w-5/6 m-auto gap-y-2">
@@ -515,6 +468,55 @@ const Home = () => {
                             ))}
                         </Swiper>
                       </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="content-center">
+                    <h2 className="font-wicked text-center text-black py-5">
+                      Project
+                    </h2>
+                    <div>
+                      <Swiper
+                        slidesPerView={1}
+                        loop={true}
+                        spaceBetween={20}
+                        className="w-3/4"
+                        autoplay={{
+                          delay: 3500,
+                          disableOnInteraction: false,
+                        }}
+                        pagination={{
+                          clickable:true,
+                        }}
+                        modules={[Autoplay, Pagination]}
+                      >
+                        {projectList.map((item, i) => (
+                          <SwiperSlide
+                            key={i}
+                            className={`text-white ${color[i]}  rounded-3xl shadow-md p-5 min-h-[300px]`}
+                          >
+                            <div className="flex flex-col gap-y-5">
+                              <h2 className="font-wicked text-sm text-center">
+                                {item.title}
+                              </h2>
+                             
+                              <div className="flex items-center justify-center">
+                                <img
+                                  loading="lazy"
+                                  src={item.image}
+                                  alt={item.title}
+                                  width={220}
+                                />
+      
+                              </div>
+                              <p className=" text-xs font-normal text-justify w-3/4 m-auto">
+                                  {item.description}
+                              </p>
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
                     </div>
                   </div>
                 </SwiperSlide>
