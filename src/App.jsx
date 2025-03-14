@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import { About, Achievement, Experience, Home, Projects } from "./pages";
 import Loader from "./components/Loader/Loader";
+import FloatingButton from "./components/FAB/FloatingButton.jsx";
+
 
 const AppContent = () => {
   const location = useLocation();
@@ -32,6 +34,7 @@ const AppContent = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <FloatingButton />
     </main>
   );
 };
